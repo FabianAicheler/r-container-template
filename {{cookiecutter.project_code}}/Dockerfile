@@ -16,4 +16,4 @@ RUN conda update -n base conda && \
     conda env create -f /tmp/environment.yml && \
     conda clean -a
 
-ENV PATH /opt/conda/envs/{{ cookiecutter.project_code }}/bin:$PATH
+ENV PATH /opt/conda/envs/qbicsoftware-{{ cookiecutter.project_code }}-ranalyses-{{ cookiecutter.container_version }}/bin:$PATH
