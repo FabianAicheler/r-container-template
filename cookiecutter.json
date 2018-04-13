@@ -3,5 +3,6 @@
     "author_name": "Sven Fillinger",
     "author_email": "sven.fillinger@qbic.uni-tuebingen.de",
     "container_version": "0.1dev",
-    "project_code": "QABCD"
+    "project_code": "QABCD",
+    "description": "Put a short analyses description here"
 }
