@@ -1,28 +1,19 @@
-FROM r-base:{{ cookiecutter.r_version }}
+FROM continuumio/miniconda
 
-LABEL maintainer="{{ cookiecutter.author_name }}" <"{{ cookiecutter.author_email  }}">  
+LABEL authors="{{ cookiecutter.author_name }}"
+LABEL description="{{ cookiecutter.description }}"
+LABEL maintainer="{{ cookiecutter.author_name }}" < "{{ cookiecutter.author_email }}">  
 LABEL version="{{ cookiecutter.container_version }}"
-LABEL organization="QBiC"
 LABEL github="https://github.com/qbicsoftware"
 
-# Update the OS and installed packages
-RUN apt-get update -y && apt-get upgrade -y
-# Install git and ca-certificates
-RUN apt-get install -y git ca-certificates
-# Clean up
-RUN apt-get clean
-
+# Install procps so that Nextflow can poll CPU usage
+RUN apt-get update && apt-get install -y procps && apt-get clean -y 
+# Update the base version of conda
+RUN conda update -n base conda
 # Copy the list of R packages into the container's /tmp dir
-COPY rpackages.txt /tmp
-ENV PKGLIST /tmp/rpackages.txt
+COPY environment.yml /tmp
+RUN conda update -n base conda && \
+    conda env create -f /tmp/environment.yml && \
+    conda clean -a
 
-COPY /scripts/* /usr/local/src/myscripts/
-WORKDIR /usr/local/src/myscripts
-
-# Install R packages from package list
-RUN cat $PKGLIST | xargs -i sh -c 'R --vanilla <<EOF \
-source("https://bioconductor.org/biocLite.R") \
-biocLite("{}", ask=FALSE) \
-q() \
-EOF'
-
+ENV PATH /opt/conda/envs/{{ cookiecutter.project_code }}/bin:$PATH

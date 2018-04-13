@@ -1,0 +1,7 @@
+name: qbicsoftware-{{ cookiecutter.pipeline_slug }}-ranalyses-{{ cookiecutter.version }}
+channels:
+  - bioconda
+  - r
+  - defaults
+dependencies:
+  - ggplot2
