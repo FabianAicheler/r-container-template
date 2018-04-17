@@ -1,6 +1,7 @@
 FROM continuumio/miniconda
 
 LABEL authors="{{ cookiecutter.author_name }}"
+LABEL organization="Quantitative Biology Center"
 LABEL description="{{ cookiecutter.description }}"
 LABEL maintainer="{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>"  
 LABEL version="{{ cookiecutter.container_version }}"
