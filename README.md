@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/qbicsoftware/r-container-template.svg?branch=master)](https://travis-ci.org/qbicsoftware/r-container-template)
 
 
-This repo holds a [cookiecutter](https://github.com/audreyr/cookiecutter) template for reproducible analysis with R.
+This repo holds a [cookiecutter](https://github.com/audreyr/cookiecutter) template for reproducible analysis with R at QBiC.
 
 ## Template using cookiecutter
 
