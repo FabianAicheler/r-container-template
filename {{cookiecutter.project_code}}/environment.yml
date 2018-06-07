@@ -1,4 +1,4 @@
-name: qbicsoftware-{{ cookiecutter.project_code }}-ranalyses-{{ cookiecutter.container_version }}
+name: {{ cookiecutter.project_code }}-ranalysis-{{ cookiecutter.container_version }}
 channels:
   - bioconda
   - r
