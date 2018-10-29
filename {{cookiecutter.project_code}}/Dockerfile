@@ -1,6 +1,6 @@
 FROM continuumio/miniconda
 
-LABEL name="{{ cookiecutter.project_code }}_{{ cookiecutter.project_label }}_ranalysis"
+LABEL name="{{ cookiecutter.project_code }}000_{{ cookiecutter.project_label }}_ranalysis"
 LABEL authors="{{ cookiecutter.author_name }}"
 LABEL organization="Quantitative Biology Center"
 LABEL description="{{ cookiecutter.description }}"
