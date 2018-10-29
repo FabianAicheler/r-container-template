@@ -1,4 +1,4 @@
-name: {{ cookiecutter.project_code }}-ranalysis-{{ cookiecutter.container_version }}
+name: {{ cookiecutter.project_code }}000_{{ cookiecutter.project_label }}_ranalysis{{ cookiecutter.container_version }}
 channels:
   - bioconda
   - r
